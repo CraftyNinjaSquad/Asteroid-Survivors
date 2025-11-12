@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbeg5ichdfwmw"]
+
+[ext_resource type="PackedScene" uid="uid://b7s2hjcemifc6" path="res://Asteroid-Survivors/Scenes/Player.tscn" id="1_0dnjg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_56fih"]
+
+[node name="space" type="Node3D"]
+
+[node name="star" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_56fih")
+
+[node name="Player" parent="." instance=ExtResource("1_0dnjg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0322636, 0, 12.3271)
