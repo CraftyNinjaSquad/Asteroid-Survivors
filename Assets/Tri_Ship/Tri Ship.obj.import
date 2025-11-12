@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dw7eymve7t8i"
+path="res://.godot/imported/Tri Ship.obj-2006b1e53437c16276b416e21cffaa01.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Tri Ship.obj-2006b1e53437c16276b416e21cffaa01.mesh"]
+
+source_file="res://Asteroid-Survivors/Assets/Tri_Ship/Tri Ship.obj"
+dest_files=["res://.godot/imported/Tri Ship.obj-2006b1e53437c16276b416e21cffaa01.mesh", "res://.godot/imported/Tri Ship.obj-2006b1e53437c16276b416e21cffaa01.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7s2hjcemifc6"]
+[gd_scene load_steps=11 format=3 uid="uid://b7s2hjcemifc6"]
 
 [ext_resource type="Script" uid="uid://6ennhr0f5kr7" path="res://player_movement.gd" id="1_t6qk3"]
-
-[sub_resource type="PrismMesh" id="PrismMesh_dt0y2"]
+[ext_resource type="ArrayMesh" uid="uid://dw7eymve7t8i" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri Ship.obj" id="2_dt0y2"]
+[ext_resource type="Material" uid="uid://t1klntw3j74b" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri_Engines.tres" id="3_u0sce"]
+[ext_resource type="Material" uid="uid://cafn4uq0hw1cm" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri_Body.tres" id="4_y5p3o"]
+[ext_resource type="Material" uid="uid://bm7xjg31y4nd" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri_Frame.tres" id="5_n4c2c"]
+[ext_resource type="Material" uid="uid://bcqccbbsjgd7u" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri_Glass.tres" id="6_4p4xb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4i8ch"]
 radius = 0.65
@@ -22,13 +25,18 @@ platform_on_leave = 2
 script = ExtResource("1_t6qk3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("PrismMesh_dt0y2")
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("2_dt0y2")
+surface_material_override/0 = ExtResource("3_u0sce")
+surface_material_override/1 = ExtResource("4_y5p3o")
+surface_material_override/2 = ExtResource("5_n4c2c")
+surface_material_override/3 = ExtResource("6_4p4xb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_4i8ch")
 
 [node name="FPoV" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.149818, -0.0586414)
 environment = SubResource("Environment_4i8ch")
 fov = 60.0
 
