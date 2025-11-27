@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7s2hjcemifc6"]
+[gd_scene load_steps=12 format=3 uid="uid://b7s2hjcemifc6"]
 
 [ext_resource type="Script" uid="uid://6ennhr0f5kr7" path="res://player_movement.gd" id="1_t6qk3"]
 [ext_resource type="ArrayMesh" uid="uid://dw7eymve7t8i" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri Ship.obj" id="2_dt0y2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://cafn4uq0hw1cm" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri_Body.tres" id="4_y5p3o"]
 [ext_resource type="Material" uid="uid://bm7xjg31y4nd" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri_Frame.tres" id="5_n4c2c"]
 [ext_resource type="Material" uid="uid://bcqccbbsjgd7u" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri_Glass.tres" id="6_4p4xb"]
+[ext_resource type="Script" uid="uid://bj53l4y1xgm1b" path="res://shoot.gd" id="7_y5p3o"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4i8ch"]
 radius = 0.65
@@ -20,6 +21,7 @@ background_mode = 2
 sky = SubResource("Sky_dt0y2")
 
 [node name="Player" type="CharacterBody3D"]
+input_ray_pickable = false
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_t6qk3")
@@ -38,10 +40,25 @@ shape = SubResource("SphereShape3D_4i8ch")
 [node name="FPoV" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.149818, -0.0586414)
 environment = SubResource("Environment_4i8ch")
+current = true
 fov = 60.0
 
 [node name="3PoV" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.970834, 2.30285)
+transform = Transform3D(1, 0, 0, 0, 0.997464, 0.0711667, 0, -0.0711667, 0.997464, 0, 0.970834, 2.6108)
 environment = SubResource("Environment_4i8ch")
-current = true
 fov = 60.0
+
+[node name="gun1" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.42608e-05, -0.576457, -0.583753)
+target_position = Vector3(0, 0, -0.3)
+script = ExtResource("7_y5p3o")
+
+[node name="gun2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.379882, 0.0754559, -0.537123)
+target_position = Vector3(0, 0, -0.3)
+script = ExtResource("7_y5p3o")
+
+[node name="gun3" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.387064, 0.078352, -0.539954)
+target_position = Vector3(0, 0, -0.3)
+script = ExtResource("7_y5p3o")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlgmsy6we2g53"]
+
+[ext_resource type="Script" uid="uid://cq3eowa3upm06" path="res://lazer.gd" id="1_jqupy"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vb5b8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqupy"]
+diffuse_mode = 3
+albedo_color = Color(0.815844, 0, 0.180104, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 2.08
+rim_enabled = true
+rim = 0.66
+rim_tint = 0.37
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_jqupy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0535456, 0, 0, 0, -6.77467e-09, -0.0513402, 0, 0.154986, -2.24415e-09, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_vb5b8")
+surface_material_override/0 = SubResource("StandardMaterial3D_jqupy")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+autostart = true
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -0.5)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
