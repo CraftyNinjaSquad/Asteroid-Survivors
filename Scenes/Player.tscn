@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://b7s2hjcemifc6"]
 
-[ext_resource type="Script" uid="uid://6ennhr0f5kr7" path="res://player_movement.gd" id="1_t6qk3"]
+[ext_resource type="Script" uid="uid://6ennhr0f5kr7" path="res://Asteroid-Survivors/Scripts/player_movement.gd" id="1_t6qk3"]
 [ext_resource type="ArrayMesh" uid="uid://dw7eymve7t8i" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri Ship.obj" id="2_dt0y2"]
 [ext_resource type="Material" uid="uid://t1klntw3j74b" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri_Engines.tres" id="3_u0sce"]
 [ext_resource type="Material" uid="uid://cafn4uq0hw1cm" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri_Body.tres" id="4_y5p3o"]
 [ext_resource type="Material" uid="uid://bm7xjg31y4nd" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri_Frame.tres" id="5_n4c2c"]
 [ext_resource type="Material" uid="uid://bcqccbbsjgd7u" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri_Glass.tres" id="6_4p4xb"]
-[ext_resource type="Script" uid="uid://bj53l4y1xgm1b" path="res://shoot.gd" id="7_y5p3o"]
+[ext_resource type="Script" uid="uid://bj53l4y1xgm1b" path="res://Asteroid-Survivors/Scripts/shoot.gd" id="7_y5p3o"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4i8ch"]
 radius = 0.65
