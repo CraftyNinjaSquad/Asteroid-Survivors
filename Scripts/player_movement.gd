@@ -1,11 +1,13 @@
 extends CharacterBody3D
 
 @onready var fpov: Camera3D = $FPoV
-@onready var tpov: Camera3D = $"3PoV"
+@onready var tpov: Camera3D = $TPoV
+@onready var rpov: Camera3D = $RPoV
 
 #const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
 const CAMERA_SENS = 0.003
+
+var spawn_radius = 30
 
 
 var acceleration = 1.0
@@ -19,12 +21,20 @@ func _input(event):
 	if event.is_action_pressed("quit"): get_tree().quit()
 	
 	if event.is_action_pressed("pov_switch"):
+		
 		if fpov.current:
 			fpov.current = false
 			tpov.current = true
-		else:
+			rpov.current = false
+		elif tpov.current:
+			fpov.current = false
+			tpov.current = false
+			rpov.current = true
+		elif rpov.current:
 			fpov.current = true
 			tpov.current = false
+			rpov.current = false
+			
 		
 	if event is InputEventMouseMotion:
 		#left right
@@ -51,7 +61,6 @@ func _physics_process(delta: float) -> void:
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
 		#velocity.z = move_toward(velocity.z, 0, SPEED)
 		
-	
 	forward_speed = lerp(forward_speed,target_speed,acceleration * delta)
 	velocity = -transform.basis.z * forward_speed
 	move_and_slide()

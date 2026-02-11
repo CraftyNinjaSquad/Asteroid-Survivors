@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvk8et2wnif"]
+
+[ext_resource type="Script" uid="uid://fcx0oix1ngvr" path="res://Asteroid-Survivors/Scripts/enemy_spawner.gd" id="1_b3bqt"]
+
+[node name="Enemy Spawner" type="Marker3D"]
+script = ExtResource("1_b3bqt")
