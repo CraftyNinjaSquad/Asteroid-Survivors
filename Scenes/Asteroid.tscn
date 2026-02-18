@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dspxqpbo76txa"]
+
+[ext_resource type="Script" uid="uid://d0lnswdhg40pl" path="res://Asteroid-Survivors/Scripts/asteroid.gd" id="1_8puwi"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ubxmc"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hf13i"]
+radial_segments = 5
+rings = 3
+
+[node name="Area3D" type="Area3D" groups=["asteroids"]]
+script = ExtResource("1_8puwi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ubxmc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_hf13i")
+skeleton = NodePath("../..")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

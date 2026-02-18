@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlgmsy6we2g53"]
+[gd_scene load_steps=5 format=3 uid="uid://dlgmsy6we2g53"]
 
-[ext_resource type="Script" uid="uid://cq3eowa3upm06" path="res://lazer.gd" id="1_jqupy"]
+[ext_resource type="Script" uid="uid://cq3eowa3upm06" path="res://Asteroid-Survivors/Scripts/lazer.gd" id="1_jqupy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_vb5b8"]
+radius = 0.05
+height = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqupy"]
 diffuse_mode = 3
@@ -14,13 +16,23 @@ rim_enabled = true
 rim = 0.66
 rim_tint = 0.37
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jqupy"]
+radius = 0.0625
+height = 0.53530884
+
+[node name="Lazer" type="Node3D" groups=["Lazers"]]
 script = ExtResource("1_jqupy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0535456, 0, 0, 0, -6.77467e-09, -0.0513402, 0, 0.154986, -2.24415e-09, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_vb5b8")
 surface_material_override/0 = SubResource("StandardMaterial3D_jqupy")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00074768066, -3.6429193e-16)
+shape = SubResource("CapsuleShape3D_jqupy")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
@@ -29,5 +41,7 @@ autostart = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -0.5)
+collide_with_areas = true
 
+[connection signal="area_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
