@@ -18,5 +18,4 @@ func _on_timer_timeout() -> void:
 func _on_area_entered(area):
 	if area.is_in_group("asteroids"):
 		area.destroy()
-		print("hit")
 		queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7s2hjcemifc6"]
+[gd_scene format=3 uid="uid://b7s2hjcemifc6"]
 
 [ext_resource type="Script" uid="uid://6ennhr0f5kr7" path="res://Asteroid-Survivors/Scripts/player_movement.gd" id="1_t6qk3"]
 [ext_resource type="ArrayMesh" uid="uid://dw7eymve7t8i" path="res://Asteroid-Survivors/Assets/Tri_Ship/Tri Ship.obj" id="2_dt0y2"]
@@ -13,6 +13,10 @@
 radius = 0.65
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t6qk3"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Sky" id="Sky_dt0y2"]
 sky_material = SubResource("ProceduralSkyMaterial_t6qk3")
@@ -20,53 +24,57 @@ sky_material = SubResource("ProceduralSkyMaterial_t6qk3")
 [sub_resource type="Environment" id="Environment_4i8ch"]
 background_mode = 2
 sky = SubResource("Sky_dt0y2")
+ambient_light_source = 2
+ambient_light_color = Color(0.7162962, 0.7162962, 0.7162962, 1)
+ambient_light_sky_contribution = 0.5
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=865180415]
 input_ray_pickable = false
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_t6qk3")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=259542769]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+cast_shadow = 2
 mesh = ExtResource("2_dt0y2")
 surface_material_override/0 = ExtResource("3_u0sce")
 surface_material_override/1 = ExtResource("4_y5p3o")
 surface_material_override/2 = ExtResource("5_n4c2c")
 surface_material_override/3 = ExtResource("6_4p4xb")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=301911271]
 shape = SubResource("SphereShape3D_4i8ch")
 
-[node name="FPoV" type="Camera3D" parent="."]
+[node name="FPoV" type="Camera3D" parent="." unique_id=815662189]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.149818, -0.0586414)
 environment = SubResource("Environment_4i8ch")
 current = true
 fov = 60.0
 
-[node name="TPoV" type="Camera3D" parent="."]
+[node name="TPoV" type="Camera3D" parent="." unique_id=980868237]
 transform = Transform3D(1, 0, 0, 0, 0.997464, 0.0711667, 0, -0.0711667, 0.997464, 0, 0.970834, 2.6108)
 environment = SubResource("Environment_4i8ch")
 fov = 60.0
 
-[node name="RPoV" type="Camera3D" parent="."]
+[node name="RPoV" type="Camera3D" parent="." unique_id=427530461]
 transform = Transform3D(-1, 6.2215935e-09, -8.720111e-08, 0, 0.9974644, 0.07116673, 8.742278e-08, 0.07116673, -0.9974644, 0, 0.970834, -2.8730028)
 environment = SubResource("Environment_4i8ch")
 fov = 60.0
 
-[node name="gun1" type="RayCast3D" parent="."]
+[node name="gun1" type="RayCast3D" parent="." unique_id=578405867]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.42608e-05, -0.576457, -0.583753)
 target_position = Vector3(0, 0, -0.3)
 script = ExtResource("7_y5p3o")
 
-[node name="gun2" type="RayCast3D" parent="."]
+[node name="gun2" type="RayCast3D" parent="." unique_id=252875487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.379882, 0.0754559, -0.537123)
 target_position = Vector3(0, 0, -0.3)
 script = ExtResource("7_y5p3o")
 
-[node name="gun3" type="RayCast3D" parent="."]
+[node name="gun3" type="RayCast3D" parent="." unique_id=249291520]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.387064, 0.078352, -0.539954)
 target_position = Vector3(0, 0, -0.3)
 script = ExtResource("7_y5p3o")
 
-[node name="Enemy Spawner" parent="." instance=ExtResource("8_n4c2c")]
+[node name="Enemy Spawner" parent="." unique_id=452999687 instance=ExtResource("8_n4c2c")]

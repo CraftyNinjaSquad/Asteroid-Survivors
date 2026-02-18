@@ -1,17 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbeg5ichdfwmw"]
+[gd_scene format=3 uid="uid://bbeg5ichdfwmw"]
 
 [ext_resource type="PackedScene" uid="uid://b7s2hjcemifc6" path="res://Asteroid-Survivors/Scenes/Player.tscn" id="1_0dnjg"]
 [ext_resource type="PackedScene" uid="uid://dspxqpbo76txa" path="res://Asteroid-Survivors/Scenes/Asteroid.tscn" id="2_56fih"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_56fih"]
 
-[node name="space" type="Node3D"]
+[node name="space" type="Node3D" unique_id=589441885]
 
-[node name="star" type="MeshInstance3D" parent="."]
+[node name="star" type="MeshInstance3D" parent="." unique_id=321047458]
 mesh = SubResource("SphereMesh_56fih")
 
-[node name="Player" parent="." instance=ExtResource("1_0dnjg")]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="star" unique_id=1637993944]
+transform = Transform3D(0.8572392, 0.29540393, 0.4217552, -0.5149185, 0.49179035, 0.7021407, 0, -0.8190721, 0.5736909, 0, 0, 0)
+
+[node name="Player" parent="." unique_id=892582742 instance=ExtResource("1_0dnjg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0322636, 0, 12.3271)
 
-[node name="Asteroid" parent="." instance=ExtResource("2_56fih")]
+[node name="Asteroid" parent="." unique_id=3400940 instance=ExtResource("2_56fih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6609793, 3.4214141, -15.169916)
