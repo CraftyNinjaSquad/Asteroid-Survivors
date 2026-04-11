@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dsdx1yd75jbw3" path="res://Asteroid-Survivors/Assets/panorama_image(1).png" id="7_4p4xb"]
 [ext_resource type="Script" uid="uid://bj53l4y1xgm1b" path="res://Asteroid-Survivors/Scripts/shoot.gd" id="7_y5p3o"]
 [ext_resource type="PackedScene" uid="uid://dvk8et2wnif" path="res://Asteroid-Survivors/Scenes/enemy_spawner.tscn" id="8_n4c2c"]
+[ext_resource type="PackedScene" uid="uid://cnd0gyxmvvbbx" path="res://Asteroid-Survivors/Scenes/Ship_UI.tscn" id="10_krgoy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4i8ch"]
 radius = 0.65
@@ -76,3 +77,7 @@ target_position = Vector3(0, 0, -0.3)
 script = ExtResource("7_y5p3o")
 
 [node name="Enemy Spawner" parent="." unique_id=452999687 instance=ExtResource("8_n4c2c")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1077898909]
+
+[node name="Control" parent="CanvasLayer" unique_id=846560687 instance=ExtResource("10_krgoy")]

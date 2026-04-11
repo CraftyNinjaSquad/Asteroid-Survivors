@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://cnd0gyxmvvbbx"]
+
+[ext_resource type="Texture2D" uid="uid://d2o6fsvem0ksq" path="res://Asteroid-Survivors/Assets/Progress_Bars/Fuel_Bar_Under.png" id="1_f0qsp"]
+[ext_resource type="Texture2D" uid="uid://coswo5iin42ro" path="res://Asteroid-Survivors/Assets/Progress_Bars/Fuel_Bar_Progress.png" id="2_m3y5c"]
+[ext_resource type="Script" uid="uid://2rxvklstlywg" path="res://Asteroid-Survivors/Scripts/fuel_bar.gd" id="3_044kn"]
+[ext_resource type="Texture2D" uid="uid://cjt5wshjiwsjv" path="res://Asteroid-Survivors/Assets/Progress_Bars/Health_Bar_Under.png" id="4_044kn"]
+[ext_resource type="Texture2D" uid="uid://3wbphvabctys" path="res://Asteroid-Survivors/Assets/Progress_Bars/battery.png" id="4_f27r8"]
+[ext_resource type="Texture2D" uid="uid://cybo82m5t0n76" path="res://Asteroid-Survivors/Assets/Progress_Bars/Health_Bar_Progress.png" id="5_r0gtn"]
+[ext_resource type="Texture2D" uid="uid://qbno6adm60wq" path="res://Asteroid-Survivors/Assets/Progress_Bars/Heart.png" id="7_8fwwm"]
+
+[sub_resource type="SystemFont" id="SystemFont_f27r8"]
+font_names = PackedStringArray("Calibri")
+font_italic = true
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_8fwwm"]
+line_spacing = -18.0
+font = SubResource("SystemFont_f27r8")
+font_size = 64
+font_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_044kn"]
+font_names = PackedStringArray("Calibri")
+font_italic = true
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0gtn"]
+line_spacing = -18.0
+font = SubResource("SystemFont_044kn")
+font_size = 64
+font_color = Color(1, 0, 0, 1)
+
+[node name="Control" type="Control" unique_id=846560687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FuelBar" type="TextureProgressBar" parent="." unique_id=93731742]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = 76.0
+offset_right = 403.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.0471976
+pivot_offset_ratio = Vector2(0.5, 0)
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_under = ExtResource("1_f0qsp")
+texture_progress = ExtResource("2_m3y5c")
+script = ExtResource("3_044kn")
+
+[node name="FuelLabel" type="Label" parent="FuelBar" unique_id=1365874936]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 250.66919
+offset_top = 13.671814
+offset_right = 291.6692
+offset_bottom = 307.67178
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+text = "F
+U
+E
+L"
+label_settings = SubResource("LabelSettings_8fwwm")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="FuelBar" unique_id=955496394]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 26.444153
+offset_top = -19.684576
+offset_right = 66.444214
+offset_bottom = 20.315422
+grow_horizontal = 0
+grow_vertical = 2
+rotation = 1.5707964
+texture = ExtResource("4_f27r8")
+stretch_mode = 4
+
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=390590247]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -429.0
+offset_top = 87.99994
+offset_right = 71.0
+offset_bottom = 112.99994
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 4.1887903
+pivot_offset_ratio = Vector2(0.5, 0)
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_under = ExtResource("4_044kn")
+texture_progress = ExtResource("5_r0gtn")
+
+[node name="HealthLabel" type="Label" parent="HealthBar" unique_id=1459981453]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 250.87488
+offset_top = -57.02825
+offset_right = 290.87488
+offset_bottom = 236.97174
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+text = "H
+E
+A
+L
+T
+H"
+label_settings = SubResource("LabelSettings_r0gtn")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HealthBar" unique_id=1891097119]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 6.9800415
+offset_top = 20.397377
+offset_right = 46.980103
+offset_bottom = 60.397377
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -1.5707964
+texture = ExtResource("7_8fwwm")
+flip_v = true
