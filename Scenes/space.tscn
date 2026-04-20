@@ -8,6 +8,7 @@
 [node name="space" type="Node3D" unique_id=589441885]
 
 [node name="star" type="MeshInstance3D" parent="." unique_id=321047458]
+layers = 2
 mesh = SubResource("SphereMesh_56fih")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="star" unique_id=1637993944]
