@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cnd0gyxmvvbbx"]
 
+[ext_resource type="Script" uid="uid://dfkcrvr7i0ghs" path="res://Asteroid-Survivors/Scenes/ship_ui.gd" id="1_7a68s"]
 [ext_resource type="Texture2D" uid="uid://d2o6fsvem0ksq" path="res://Asteroid-Survivors/Assets/Progress_Bars/Fuel_Bar_Under.png" id="1_f0qsp"]
 [ext_resource type="Texture2D" uid="uid://coswo5iin42ro" path="res://Asteroid-Survivors/Assets/Progress_Bars/Fuel_Bar_Progress.png" id="2_m3y5c"]
 [ext_resource type="Script" uid="uid://2rxvklstlywg" path="res://Asteroid-Survivors/Scripts/fuel_bar.gd" id="3_044kn"]
@@ -7,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://3wbphvabctys" path="res://Asteroid-Survivors/Assets/Progress_Bars/battery.png" id="4_f27r8"]
 [ext_resource type="Texture2D" uid="uid://cybo82m5t0n76" path="res://Asteroid-Survivors/Assets/Progress_Bars/Health_Bar_Progress.png" id="5_r0gtn"]
 [ext_resource type="Texture2D" uid="uid://qbno6adm60wq" path="res://Asteroid-Survivors/Assets/Progress_Bars/Heart.png" id="7_8fwwm"]
+[ext_resource type="Script" uid="uid://dow8etymv0o0g" path="res://Asteroid-Survivors/Scripts/health_bar.gd" id="8_3au0k"]
+[ext_resource type="Material" uid="uid://ciokui2nes2bl" path="res://Asteroid-Survivors/Assets/Compass_Arrow.tres" id="10_0rbnc"]
+[ext_resource type="ArrayMesh" uid="uid://c52tx41gf3x36" path="res://Asteroid-Survivors/Assets/Compass.obj" id="10_3l4mc"]
+[ext_resource type="Material" uid="uid://dkgae8u0pnqky" path="res://Asteroid-Survivors/Assets/Compass_bubble.tres" id="11_3l4mc"]
 
 [sub_resource type="SystemFont" id="SystemFont_f27r8"]
 font_names = PackedStringArray("Calibri")
@@ -37,6 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7a68s")
 
 [node name="FuelBar" type="TextureProgressBar" parent="." unique_id=93731742]
 layout_mode = 1
@@ -110,9 +116,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -429.0
-offset_top = 87.99994
+offset_top = 88.0
 offset_right = 71.0
-offset_bottom = 112.99994
+offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 4.1887903
@@ -125,6 +131,7 @@ stretch_margin_right = 8
 stretch_margin_bottom = 8
 texture_under = ExtResource("4_044kn")
 texture_progress = ExtResource("5_r0gtn")
+script = ExtResource("8_3au0k")
 
 [node name="HealthLabel" type="Label" parent="HealthBar" unique_id=1459981453]
 visible = false
@@ -166,3 +173,32 @@ grow_vertical = 2
 rotation = -1.5707964
 texture = ExtResource("7_8fwwm")
 flip_v = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1131818601]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 69.0
+offset_top = -552.0
+offset_right = 581.0
+offset_bottom = -40.0
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+pivot_offset_ratio = Vector2(0, 1)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=605936522]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=565257218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.88)
+
+[node name="Compass" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1544537168]
+rotation_order = 0
+cast_shadow = 0
+mesh = ExtResource("10_3l4mc")
+surface_material_override/0 = ExtResource("10_0rbnc")
+surface_material_override/1 = ExtResource("11_3l4mc")
