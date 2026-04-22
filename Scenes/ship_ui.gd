@@ -34,19 +34,6 @@ func _process(_delta: float) -> void:
 		Health_bar.position.y = 348.0
 		Health_bar.rotation_degrees = 270.0
 		
-	#if not player or target:
-		#return
-		
-	#var direction = (target.global_position - player.global_position).normalized()
-	#
-	#var player_forward = -player.get_global_transform().basis.z
-	#
-	#var angle = atan2(direction.y, direction.x) - atan2(player_forward.y, player_forward.x)
-	#
-	#
-	#compass.look_at_from_position(player_forward, target.global_position, Vector3.FORWARD)
-	#$SubViewportContainer/SubViewport/Camera3D.position = compass.position
-	#$SubViewportContainer/SubViewport/Camera3D.position.z += 1.8
 	
 	var player_pos = player.global_transform.origin
 	var target_pos = target.global_transform.origin

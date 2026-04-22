@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cnd0gyxmvvbbx" path="res://Asteroid-Survivors/Scenes/Ship_UI.tscn" id="10_krgoy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4i8ch"]
-radius = 0.65
+radius = 0.778
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_krgoy"]
 panorama = ExtResource("7_4p4xb")
@@ -27,7 +27,7 @@ ambient_light_source = 2
 ambient_light_color = Color(0.7162962, 0.7162962, 0.7162962, 1)
 ambient_light_sky_contribution = 0.5
 
-[node name="Player" type="CharacterBody3D" unique_id=865180415]
+[node name="Player" type="CharacterBody3D" unique_id=865180415 groups=["Player"]]
 input_ray_pickable = false
 motion_mode = 1
 platform_on_leave = 2
@@ -82,3 +82,8 @@ script = ExtResource("7_y5p3o")
 
 [node name="Control" parent="CanvasLayer" unique_id=846560687 node_paths=PackedStringArray("player") instance=ExtResource("10_krgoy")]
 player = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=348193163 groups=["Player"]]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=80602273 groups=["Player"]]
+shape = SubResource("SphereShape3D_4i8ch")

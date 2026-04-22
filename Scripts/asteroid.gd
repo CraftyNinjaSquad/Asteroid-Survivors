@@ -13,6 +13,7 @@ var velocity = Vector3(0,0,0)
 var size = randi_range(1,4)
 var speed = randf_range(0.1,0.75)
 var canHit = false
+var player_damage = 5
 
 func  _ready() -> void:
 	velocity.x = randf_range(0.0,1.0)
@@ -32,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	var player_pos = player.global_position
 	if self.global_position.distance_to(player_pos) > despawn_range:
 		queue_free()
-
+		
 func destroy():
 	if canHit:
 		var asteroid_instance = asteroid.instantiate()
@@ -44,4 +45,9 @@ func destroy():
 				get_tree().current_scene.add_child(asteroid_instance)
 			
 		queue_free()
-	
+
+func _on_player_entered(area: Area3D) -> void:
+	if area.is_in_group("Player"):
+		if canHit:
+			globals.health -= player_damage * size
+			destroy()
