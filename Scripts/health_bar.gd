@@ -1,5 +1,5 @@
 extends TextureProgressBar
 
 func _process(delta: float) -> void:
-	value = globals.fuel
-	max_value = globals.max_fuel
+	value = globals.health
+	max_value = globals.max_health

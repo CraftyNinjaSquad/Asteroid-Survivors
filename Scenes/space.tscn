@@ -3,7 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://b7s2hjcemifc6" path="res://Asteroid-Survivors/Scenes/Player.tscn" id="1_0dnjg"]
 [ext_resource type="PackedScene" uid="uid://dspxqpbo76txa" path="res://Asteroid-Survivors/Scenes/Asteroid.tscn" id="2_56fih"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56fih"]
+albedo_color = Color(0, 1, 1, 1)
+
 [sub_resource type="SphereMesh" id="SphereMesh_56fih"]
+material = SubResource("StandardMaterial3D_56fih")
 
 [node name="space" type="Node3D" unique_id=589441885]
 
