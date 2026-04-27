@@ -186,6 +186,7 @@ offset_bottom = -40.0
 grow_vertical = 0
 scale = Vector2(0.25, 0.25)
 pivot_offset_ratio = Vector2(0, 1)
+stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=605936522]
 own_world_3d = true
