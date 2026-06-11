@@ -36,6 +36,7 @@ font_size = 64
 font_color = Color(1, 0, 0, 1)
 
 [node name="Control" type="Control" unique_id=846560687]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

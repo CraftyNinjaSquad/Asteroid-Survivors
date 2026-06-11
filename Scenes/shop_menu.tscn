@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://0o6dt6c1q60i"]
+
+[ext_resource type="Script" uid="uid://dt7kjcw4w4wjv" path="res://Asteroid-Survivors/Scripts/shop_menu.gd" id="1_lrde0"]
+
+[node name="ShopMenu" type="CanvasLayer" unique_id=1112277683]
+process_mode = 3
+script = ExtResource("1_lrde0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1351478536]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -502.75
+offset_top = -258.5
+offset_right = 502.75
+offset_bottom = 258.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.40392157, 1, 0.5411765)
+
+[node name="BottomButtons" type="GridContainer" parent="ColorRect" unique_id=1401397833]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -334.0
+offset_top = -165.5
+offset_right = 335.0
+offset_bottom = -14.5
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0, 1)
+theme_override_constants/h_separation = 68
+columns = 3
+
+[node name="Refuel" type="VBoxContainer" parent="ColorRect/BottomButtons" unique_id=1995780548]
+layout_mode = 2
+
+[node name="RefuelPrice" type="Label" parent="ColorRect/BottomButtons/Refuel" unique_id=1140241200]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "10.0"
+horizontal_alignment = 1
+
+[node name="RefuelButton" type="Button" parent="ColorRect/BottomButtons/Refuel" unique_id=247350567]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Refuel"
+
+[node name="Repair" type="VBoxContainer" parent="ColorRect/BottomButtons" unique_id=822173018]
+layout_mode = 2
+
+[node name="RepairPrice" type="Label" parent="ColorRect/BottomButtons/Repair" unique_id=538096492]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "5.0"
+horizontal_alignment = 1
+
+[node name="RepairButton" type="Button" parent="ColorRect/BottomButtons/Repair" unique_id=1152680939]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Repair"
+
+[node name="Quota" type="VBoxContainer" parent="ColorRect/BottomButtons" unique_id=1124819404]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="QuotaLabel" type="Label" parent="ColorRect/BottomButtons/Quota" unique_id=2009377529]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Quota"
+horizontal_alignment = 1
+
+[node name="QuotaPrice" type="Label" parent="ColorRect/BottomButtons/Quota" unique_id=1815461254]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "0.0/100.0"
+horizontal_alignment = 1
+
+[node name="PayButton" type="Button" parent="ColorRect/BottomButtons/Quota" unique_id=851654087]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Pay 10%"
+
+[node name="SideButtons" type="VBoxContainer" parent="ColorRect" unique_id=140322645]
+layout_mode = 1
+offset_right = 149.0
+offset_bottom = 150.0
+pivot_offset_ratio = Vector2(0, 1)
+theme_override_constants/separation = 14
+
+[node name="ExitButton" type="Button" parent="ColorRect/SideButtons" unique_id=94747050]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Exit
+"
+
+[node name="RerollPrice" type="Label" parent="ColorRect/SideButtons" unique_id=1895533264]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "5.0"
+horizontal_alignment = 1
+
+[node name="RerollButton" type="Button" parent="ColorRect/SideButtons" unique_id=2009743345]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Reroll
+"
+
+[node name="UpgradesLabel" type="Label" parent="ColorRect" unique_id=215833469]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.5
+offset_right = 115.5
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Upgrades"
+horizontal_alignment = 1
+
+[node name="Upgrades" type="HBoxContainer" parent="ColorRect" unique_id=61175956]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[connection signal="pressed" from="ColorRect/BottomButtons/Refuel/RefuelButton" to="." method="_on_refuel_button_pressed"]
+[connection signal="pressed" from="ColorRect/BottomButtons/Repair/RepairButton" to="." method="_on_repair_button_pressed"]
+[connection signal="pressed" from="ColorRect/BottomButtons/Quota/PayButton" to="." method="_on_pay_button_pressed"]
+[connection signal="pressed" from="ColorRect/SideButtons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="ColorRect/SideButtons/RerollButton" to="." method="_on_reroll_button_pressed"]
