@@ -1,6 +1,6 @@
 extends Node
 
-var currency = 0.0
+#player variables
 var max_health = 100.0
 var health = 100.0
 var max_fuel = 100.0
@@ -10,6 +10,14 @@ var target_speed = 5.0
 var acceleration = 2.0
 var fire_rate = .5
 var damping = .2
+
+#shop variables
+var currency = 0.0
+var quota = 100
+var quota_paid = 0
+var fuel_cost = 10.0
+var repair_cost = 10.0
+var reroll_cost = 5.0
 
 
 func _input(event: InputEvent) -> void:
