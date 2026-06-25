@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://bj81u0gn3wmwl"]
+
+[ext_resource type="Script" uid="uid://b0jfvend3pado" path="res://Asteroid-Survivors/Scripts/upgrade.gd" id="1_npdbj"]
+
+[resource]
+script = ExtResource("1_npdbj")
+name = "Max speed"
+description = "Icrease max speed by 5%"
+rarity = 1
+cost = 10
+stat_name = "target_speed"
+value = 1.05

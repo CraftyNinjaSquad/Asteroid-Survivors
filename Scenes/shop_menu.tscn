@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://0o6dt6c1q60i"]
 
 [ext_resource type="Script" uid="uid://dt7kjcw4w4wjv" path="res://Asteroid-Survivors/Scripts/shop_menu.gd" id="1_lrde0"]
+[ext_resource type="PackedScene" uid="uid://5s1tkalcijlr" path="res://Asteroid-Survivors/Scenes/upgrade.tscn" id="2_4na7e"]
+[ext_resource type="PackedScene" uid="uid://cgjyr18f84q3a" path="res://Asteroid-Survivors/Scenes/Shop_manager.tscn" id="3_5vgw0"]
 
-[node name="ShopMenu" type="CanvasLayer" unique_id=1112277683]
+[node name="ShopMenu" type="CanvasLayer" unique_id=1112277683 node_paths=PackedStringArray("Shop_manager")]
 process_mode = 3
+layer = 2
 script = ExtResource("1_lrde0")
+Shop_manager = NodePath("Shop_manager")
+upgrade_option = ExtResource("2_4na7e")
+
+[node name="Shop_manager" parent="." unique_id=563089300 instance=ExtResource("3_5vgw0")]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1351478536]
 anchors_preset = 8
@@ -125,6 +132,7 @@ text = "Upgrades"
 horizontal_alignment = 1
 
 [node name="Upgrades" type="HBoxContainer" parent="ColorRect" unique_id=61175956]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

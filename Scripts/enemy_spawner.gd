@@ -23,7 +23,7 @@ func Spawn_enemy():
 	for i in range(spawn_amount):
 		var asteroid_instance = asteroid.instantiate()
 		asteroid_instance.position = spawn_pos
-		get_tree().current_scene.add_child(asteroid_instance)
+		get_tree().current_scene.add_child.call_deferred(asteroid_instance)
 	await get_tree().create_timer(spawn_rate, false).timeout
 	if spawn_rate > 2.0:
 		spawn_rate -= 0.01

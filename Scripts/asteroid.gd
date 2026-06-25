@@ -5,6 +5,7 @@ extends Area3D
 
 const lazer = preload("res://Asteroid-Survivors/Scenes/Lazer.tscn")
 const asteroid = preload("res://Asteroid-Survivors/Scenes/Asteroid.tscn")
+const ohre = preload("res://Asteroid-Survivors/Scenes/ohre.tscn")
 
 const despawn_range = 75
 
@@ -25,7 +26,7 @@ func  _ready() -> void:
 	rock.scale *= size
 	rockcollide.scale *= size
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.1).timeout
 	canHit = true
 	
 func _physics_process(delta: float) -> void:
@@ -37,13 +38,16 @@ func _physics_process(delta: float) -> void:
 func destroy():
 	if canHit:
 		var asteroid_instance = asteroid.instantiate()
+		var ohre_instance = ohre.instantiate()
 		if size > 1:
 			size -= 1
 			asteroid_instance.size = size
 			for i in randi_range(2,4):
 				asteroid_instance.position = self.position
 				get_tree().current_scene.add_child(asteroid_instance)
-			
+		
+		ohre_instance.position = self.position
+		get_tree().current_scene.add_child(ohre_instance)
 		queue_free()
 
 func _on_player_entered(area: Area3D) -> void:

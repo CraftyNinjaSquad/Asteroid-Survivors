@@ -1,14 +1,24 @@
 [gd_scene format=3 uid="uid://5s1tkalcijlr"]
 
-[node name="upgrade" type="Control" unique_id=1163701904]
-layout_mode = 3
+[ext_resource type="Script" uid="uid://fwsgw3emye5l" path="res://Asteroid-Survivors/Scripts/upgrade_UI.gd" id="1_wd3va"]
+
+[node name="upgrade" type="Button" unique_id=495363896]
+process_mode = 3
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -119.5
+offset_right = 88.0
+offset_bottom = 119.5
 grow_horizontal = 2
 grow_vertical = 2
+text = " "
+flat = true
+script = ExtResource("1_wd3va")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2121599014]
 layout_mode = 1
@@ -23,20 +33,51 @@ offset_right = 87.5
 offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 1, 0.627451)
+color = Color(0, 0.3372549, 1, 0.8352941)
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=110561586]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.25
+offset_top = -119.0
+offset_right = 87.25
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Name" type="Label" parent="ColorRect" unique_id=1833864783]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -82.0
+offset_right = 83.0
+offset_bottom = 55.0
 grow_horizontal = 2
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 25
 text = "Name"
 horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Rarity" type="Label" parent="ColorRect" unique_id=1445250278]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 68.0
+offset_right = 33.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Rarity"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Desc" type="Label" parent="ColorRect" unique_id=1216945548]
 layout_mode = 1
@@ -45,17 +86,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -44.5
-offset_top = -11.5
-offset_right = 44.5
-offset_bottom = 11.5
+offset_left = -81.0
+offset_top = -18.0
+offset_right = 82.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/line_spacing = 2
 theme_override_font_sizes/font_size = 15
 text = "Description"
 horizontal_alignment = 1
+autowrap_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect" unique_id=241234815]
+[node name="Cost" type="Label" parent="ColorRect" unique_id=241234815]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -63,26 +106,14 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -20.0
-offset_top = -67.0
+offset_top = -58.0
 offset_right = 20.0
-offset_bottom = -44.0
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "cost"
 horizontal_alignment = 1
+autowrap_mode = 2
 
-[node name="Button" type="Button" parent="ColorRect" unique_id=381848365]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -32.0
-offset_top = -44.0
-offset_right = 33.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 20
-text = "BUY"
+[connection signal="pressed" from="." to="." method="_pressed"]
+[connection signal="pressed" from="ColorRect/Button" to="." method="_pressed"]

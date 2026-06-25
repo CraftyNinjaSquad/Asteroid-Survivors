@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://tj1t0o2d6wmj"]
+
+[ext_resource type="Script" uid="uid://b0jfvend3pado" path="res://Asteroid-Survivors/Scripts/upgrade.gd" id="1_kn4r0"]
+
+[resource]
+script = ExtResource("1_kn4r0")
+name = "Max Health"
+description = "Increase Max health by 50"
+rarity = 2
+cost = 10
+stat_name = "max_health"
+value = 50.0

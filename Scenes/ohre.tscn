@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://biwi0a23d5g2d"]
+
+[ext_resource type="Script" uid="uid://dj5b0neq2xjri" path="res://Asteroid-Survivors/Scripts/ohre.gd" id="1_i333t"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d0akm"]
+radius = 0.75
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i333t"]
+shading_mode = 0
+albedo_color = Color(1, 0.8235294, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_yttys"]
+material = SubResource("StandardMaterial3D_i333t")
+radius = 0.05
+height = 0.1
+radial_segments = 16
+rings = 16
+
+[node name="Ohre" type="Area3D" unique_id=1774891996]
+script = ExtResource("1_i333t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=737426996]
+shape = SubResource("SphereShape3D_d0akm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1680168140]
+mesh = SubResource("SphereMesh_yttys")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

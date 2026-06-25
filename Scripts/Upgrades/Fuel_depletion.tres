@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://cyur3lnfv4lp6"]
+
+[ext_resource type="Script" uid="uid://b0jfvend3pado" path="res://Asteroid-Survivors/Scripts/upgrade.gd" id="1_7cpx1"]
+
+[resource]
+script = ExtResource("1_7cpx1")
+name = "Fuel efficiency"
+description = "reduce fuel cunsumption by 5%"
+cost = 5
+stat_name = "max_fuel"
+value = 0.95
