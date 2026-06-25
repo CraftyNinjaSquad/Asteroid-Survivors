@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cgjyr18f84q3a"]
+
+[ext_resource type="Script" uid="uid://cyjunce4n37r" path="res://Asteroid-Survivors/Scripts/shop_manager.gd" id="1_kb3ke"]
+[ext_resource type="Script" uid="uid://b0jfvend3pado" path="res://Asteroid-Survivors/Scripts/upgrade.gd" id="2_cmv0h"]
+[ext_resource type="Resource" uid="uid://dscyljdpioxrd" path="res://Asteroid-Survivors/Scripts/Upgrades/Acceleration.tres" id="3_1hyjl"]
+[ext_resource type="Resource" uid="uid://cyur3lnfv4lp6" path="res://Asteroid-Survivors/Scripts/Upgrades/Fuel_depletion.tres" id="4_p08g3"]
+[ext_resource type="Resource" uid="uid://tj1t0o2d6wmj" path="res://Asteroid-Survivors/Scripts/Upgrades/Max_Health.tres" id="5_3qjmf"]
+[ext_resource type="Resource" uid="uid://cegus5ctghqx" path="res://Asteroid-Survivors/Scripts/Upgrades/Max_Fuel.tres" id="6_24k54"]
+[ext_resource type="Resource" uid="uid://brw4c00gbxmp6" path="res://Asteroid-Survivors/Scripts/Upgrades/Fire_Rate.tres" id="7_r00qi"]
+[ext_resource type="Resource" uid="uid://bj81u0gn3wmwl" path="res://Asteroid-Survivors/Scripts/Upgrades/Max_speed.tres" id="8_delcj"]
+[ext_resource type="Resource" uid="uid://1dgbsu7oif7r" path="res://Asteroid-Survivors/Scripts/Upgrades/Currency_Mult.tres" id="9_b1ujl"]
+
+[node name="Shop_manager" type="Node" unique_id=563089300]
+script = ExtResource("1_kb3ke")
+all_upgrades = Array[ExtResource("2_cmv0h")]([ExtResource("3_1hyjl"), ExtResource("4_p08g3"), ExtResource("5_3qjmf"), ExtResource("6_24k54"), ExtResource("7_r00qi"), ExtResource("8_delcj"), ExtResource("9_b1ujl")])

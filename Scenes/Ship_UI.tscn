@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnd0gyxmvvbbx"]
 
-[ext_resource type="Script" uid="uid://dfkcrvr7i0ghs" path="res://Asteroid-Survivors/Scenes/ship_ui.gd" id="1_7a68s"]
+[ext_resource type="Script" uid="uid://dfkcrvr7i0ghs" path="res://Asteroid-Survivors/Scripts/ship_ui.gd" id="1_7a68s"]
 [ext_resource type="Texture2D" uid="uid://d2o6fsvem0ksq" path="res://Asteroid-Survivors/Assets/Progress_Bars/Fuel_Bar_Under.png" id="1_f0qsp"]
 [ext_resource type="Texture2D" uid="uid://coswo5iin42ro" path="res://Asteroid-Survivors/Assets/Progress_Bars/Fuel_Bar_Progress.png" id="2_m3y5c"]
 [ext_resource type="Script" uid="uid://2rxvklstlywg" path="res://Asteroid-Survivors/Scripts/fuel_bar.gd" id="3_044kn"]
@@ -36,6 +36,7 @@ font_size = 64
 font_color = Color(1, 0, 0, 1)
 
 [node name="Control" type="Control" unique_id=846560687]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -173,6 +174,21 @@ grow_vertical = 2
 rotation = -1.5707964
 texture = ExtResource("7_8fwwm")
 flip_v = true
+
+[node name="Ohre" type="Label" parent="." unique_id=1828834401]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 12.0
+offset_right = 44.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Ohre: 0.0"
+horizontal_alignment = 1
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1131818601]
 layout_mode = 1

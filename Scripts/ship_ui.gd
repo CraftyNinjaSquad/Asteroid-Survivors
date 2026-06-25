@@ -12,10 +12,11 @@ var target: Node3D
 var current_camera
 
 func _ready() -> void:
-	target = get_tree().current_scene.get_node("star")
+	target = get_tree().current_scene.get_node("Shop")
 
 func _process(_delta: float) -> void:
 	current_camera = get_viewport().get_camera_3d()
+	$Ohre.text = "Ohre: " + str(globals.currency)
 	if current_camera == FPoV:
 		Fuel_Bar.position.x = 479.0
 		Fuel_Bar.position.y = 400.0

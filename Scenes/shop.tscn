@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cp2ojob5a8mhc"]
+
+[ext_resource type="Script" uid="uid://dcbd05o0e08jg" path="res://Asteroid-Survivors/Scripts/shop_object.gd" id="1_w1tca"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oss4x"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_co5sb"]
+material = SubResource("StandardMaterial3D_oss4x")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5q266"]
+
+[node name="Shop" type="Area3D" unique_id=1472672725]
+script = ExtResource("1_w1tca")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=50280099]
+mesh = SubResource("SphereMesh_co5sb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1819211274]
+shape = SubResource("SphereShape3D_5q266")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

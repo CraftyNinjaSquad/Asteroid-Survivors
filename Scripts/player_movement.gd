@@ -7,11 +7,6 @@ extends CharacterBody3D
 #const SPEED = 5.0
 const CAMERA_SENS = 0.003
 
-@export var acceleration = 2.0
-@export var target_speed = 5.0
-@export var fuel_depletion = 5.0
-@export var damping = 0.1
-
 var velocity_vector: Vector3 = Vector3.ZERO
 var spawn_radius = 30
 var mouse_movement = Vector2.ZERO
@@ -51,7 +46,7 @@ func _input(event):
 			rpov.current = false
 			
 		
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and globals.fuel > 0:
 		#left right
 		rotate_object_local(Vector3(0,1,0), -event.relative.x * CAMERA_SENS) 
 		#up down
@@ -80,20 +75,23 @@ func _physics_process(delta: float) -> void:
 	
 	if mouse_movement > Vector2(0.0,0.0):
 		if globals.fuel > 0:
-			globals.fuel -= fuel_depletion * 0.33 * delta
+			globals.fuel -= globals.fuel_depletion * 0.33 * delta
 			mouse_movement = Vector2.ZERO
 	
 	if Input.is_action_pressed("thrusters"):
-		if globals.fuel > 0:
+		if globals.fuel > 0.0:
 			var forward = -transform.basis.z
-			velocity_vector += forward * acceleration * delta
-			globals.fuel -= fuel_depletion * delta
+			velocity_vector += forward * globals.acceleration * delta
+			globals.fuel -= globals.fuel_depletion * delta
+			
+	if globals.fuel == 0.0:
+		globals.damping = 0.0
 		
-	if damping > 0.0:
-		velocity_vector = velocity_vector.lerp(Vector3.ZERO, damping * delta)
+	if globals.damping > 0.0:
+		velocity_vector = velocity_vector.lerp(Vector3.ZERO, globals.damping * delta)
 		
-	if velocity_vector.length() > target_speed:
-		velocity_vector = velocity_vector.normalized() * target_speed
+	if velocity_vector.length() > globals.target_speed:
+		velocity_vector = velocity_vector.normalized() * globals.target_speed
 		
 	velocity = velocity_vector
 	move_and_slide()

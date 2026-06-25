@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://dscyljdpioxrd"]
+
+[ext_resource type="Script" uid="uid://b0jfvend3pado" path="res://Asteroid-Survivors/Scripts/upgrade.gd" id="1_7eyyk"]
+
+[resource]
+script = ExtResource("1_7eyyk")
+name = "Acceleration"
+description = "Increase ship acceleration by 10%"
+rarity = 1
+cost = 10
+stat_name = "acceleration"
+value = 1.1
