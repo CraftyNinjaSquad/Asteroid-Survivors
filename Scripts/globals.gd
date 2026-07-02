@@ -47,4 +47,4 @@ func apply_upgrade(upgrade: Upgrade):
 			fire_rate *= upgrade.value
 		
 		"currency_mult":
-			currency_mult *= upgrade.value
+			currency_mult = roundf(currency_mult * upgrade.value)

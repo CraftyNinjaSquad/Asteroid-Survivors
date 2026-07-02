@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://dspxqpbo76txa"]
 
 [ext_resource type="Script" uid="uid://d0lnswdhg40pl" path="res://Asteroid-Survivors/Scripts/asteroid.gd" id="1_8puwi"]
+[ext_resource type="Texture2D" uid="uid://2i5gvfdkd1ef" path="res://Asteroid-Survivors/Assets/asteroind texture.png" id="2_ubxmc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ubxmc"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hf13i"]
+albedo_texture = ExtResource("2_ubxmc")
+
 [sub_resource type="SphereMesh" id="SphereMesh_hf13i"]
+material = SubResource("StandardMaterial3D_hf13i")
 radial_segments = 5
 rings = 3
 

@@ -6,7 +6,7 @@
 script = ExtResource("1_5eyou")
 name = "Ohre Extraction"
 description = "Increases value of Ohre obtained by 50%"
-rarity = 3
+rarity = 2
 cost = 15
-stat_name = "currrency_mult"
+stat_name = "currency_mult"
 value = 1.5

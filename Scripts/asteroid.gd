@@ -10,16 +10,22 @@ const ohre = preload("res://Asteroid-Survivors/Scenes/ohre.tscn")
 const despawn_range = 75
 
 var player
-var velocity = Vector3(0,0,0)
+var direction = Vector3(0,0,0)
 var size = randi_range(1,4)
 var speed = randf_range(0.1,0.75)
+var rotating = Vector3(0,0,0)
 var canHit = false
 var player_damage = 5
+var velocity_vector: Vector3 = Vector3.ZERO
 
 func  _ready() -> void:
-	velocity.x = randf_range(0.0,1.0)
-	velocity.y = randf_range(0.0,1.0)
-	velocity.z = randf_range(0.0,1.0)
+	direction.x = randf_range(0.0,1.0)
+	direction.y = randf_range(0.0,1.0)
+	direction.z = randf_range(0.0,1.0)
+	
+	rotating.x = randf_range(0.0,0.01)
+	rotating.y = randf_range(0.0,0.01)
+	rotating.z = randf_range(0.0,0.01)
 	player = get_tree().current_scene.get_node("Player")
 	
 	self.scale *= size
@@ -30,8 +36,14 @@ func  _ready() -> void:
 	canHit = true
 	
 func _physics_process(delta: float) -> void:
-	position += transform.basis * velocity * speed * delta
+	velocity_vector = direction * speed * delta
+	rotate_x(rotating.x)
+	rotate_y(rotating.y)
+	rotate_z(rotating.z)
 	var player_pos = player.global_position
+	position += velocity_vector
+	
+	
 	if self.global_position.distance_to(player_pos) > despawn_range:
 		queue_free()
 		
