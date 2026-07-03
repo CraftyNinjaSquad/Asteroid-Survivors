@@ -48,3 +48,24 @@ func apply_upgrade(upgrade: Upgrade):
 		
 		"currency_mult":
 			currency_mult = roundf(currency_mult * upgrade.value)
+
+## Reset game
+func reset_game():
+	## reset variables to default values.
+	max_health = 100.0
+	health = 100.0
+	max_fuel = 100.0
+	fuel = 100.0
+	fuel_depletion = 5.0
+	target_speed = 5.0
+	acceleration = 2.0
+	fire_rate = .5
+	damping = .2
+	currency_mult = 1.0
+	
+	currency = 0.0
+	quota = 100
+	quota_paid = 0
+	fuel_cost = 10.0
+	repair_cost = 10.0
+	reroll_cost = 5.0

@@ -4,6 +4,9 @@ extends CharacterBody3D
 @onready var tpov: Camera3D = $TPoV
 @onready var rpov: Camera3D = $RPoV
 
+const pause_menu = preload("res://Asteroid-Survivors/Scenes/pause_menu.tscn")
+
+
 #const SPEED = 5.0
 const CAMERA_SENS = 0.003
 
@@ -20,7 +23,11 @@ func _ready():
 
 
 func _input(event):
-	if event.is_action_pressed("quit"): get_tree().quit()
+	if event.is_action_pressed("pause"): 
+		var pause = pause_menu.instantiate()
+		get_tree().current_scene.add_child(pause)
+		get_tree().paused = true
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	#if event.is_action_pressed("thrusters"):
 		##pass

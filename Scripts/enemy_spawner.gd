@@ -10,19 +10,20 @@ var counter = 0
 func _ready() -> void:
 	Spawn_enemy()
 
-
-func Spawn_enemy():
+func randomized_position():
 	var theta = 2 * PI * randf()
 	var phi = PI * randf()   
 	# Convert to cartesian
 	var x = sin(phi) * cos(theta) * spawn_radius
 	var y = sin(phi) * sin(theta) * spawn_radius
 	var z = cos(phi) * spawn_radius
-	var spawn_pos = Vector3(x,y,z)
 	
+	return Vector3(x,y,z)
+
+func Spawn_enemy():
 	for i in range(spawn_amount):
 		var asteroid_instance = asteroid.instantiate()
-		asteroid_instance.position = spawn_pos
+		asteroid_instance.position = randomized_position()
 		get_tree().current_scene.add_child.call_deferred(asteroid_instance)
 	await get_tree().create_timer(spawn_rate, false).timeout
 	if spawn_rate > 2.0:

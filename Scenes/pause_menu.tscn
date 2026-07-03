@@ -1,0 +1,403 @@
+[gd_scene format=3 uid="uid://4iel1dwtglb2"]
+
+[ext_resource type="Script" uid="uid://caxsyq1snwv3g" path="res://Asteroid-Survivors/Scripts/Menus/pause_menu.gd" id="1_g3seq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0867v"]
+bg_color = Color(0, 0, 0.80784315, 0.41960785)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frlag"]
+bg_color = Color(0, 0, 0.3372549, 0.5921569)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07gj0"]
+bg_color = Color(0.062274136, 0.3001038, 1, 0.41960785)
+
+[sub_resource type="Theme" id="Theme_g3seq"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=2122071012]
+process_mode = 3
+layer = 2
+script = ExtResource("1_g3seq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=773214645]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -502.75
+offset_top = -258.5
+offset_right = 502.75
+offset_bottom = 258.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.40392157, 1, 0.5411765)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1961880390]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 10.5
+offset_right = 121.0
+offset_bottom = 52.5
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "- Game Paused - "
+horizontal_alignment = 1
+
+[node name="MainPauseButtons" type="VBoxContainer" parent="ColorRect" unique_id=1719495538]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -87.0
+offset_right = 90.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="ResumeButton" type="Button" parent="ColorRect/MainPauseButtons" unique_id=573408435]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_0867v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_07gj0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0867v")
+text = " - Resume - "
+
+[node name="ResetButton" type="Button" parent="ColorRect/MainPauseButtons" unique_id=856376098]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_0867v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_07gj0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0867v")
+text = " - Restart - "
+
+[node name="OptionsButton" type="Button" parent="ColorRect/MainPauseButtons" unique_id=943592351]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_0867v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_07gj0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0867v")
+text = " - Options - "
+
+[node name="MainButton" type="Button" parent="ColorRect/MainPauseButtons" unique_id=915125684]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_0867v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_07gj0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0867v")
+text = " - Main Menu - "
+
+[node name="ExitButton" type="Button" parent="ColorRect/MainPauseButtons" unique_id=803690394]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_0867v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_07gj0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0867v")
+text = " - Exit Game - "
+
+[node name="Confirmation" type="ColorRect" parent="ColorRect" unique_id=1614795555]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.99997
+offset_top = -297.0
+offset_right = 270.375
+offset_bottom = 340.51
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(0, 0.26943702, 0.6908363, 0.5411765)
+
+[node name="Label" type="Label" parent="ColorRect/Confirmation" unique_id=1960854233]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.097046
+offset_top = 1.7045453
+offset_right = 66.902954
+offset_bottom = 29.704546
+grow_horizontal = 2
+scale = Vector2(2.5, 2.5)
+pivot_offset_ratio = Vector2(0.5, 0)
+theme_override_font_sizes/font_size = 20
+text = "Are You Sure?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/Confirmation" unique_id=1683646188]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -18.0
+offset_right = 69.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/separation = 39
+
+[node name="YesButton" type="Button" parent="ColorRect/Confirmation/HBoxContainer" unique_id=1940783424]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = " Yes "
+
+[node name="NoButton" type="Button" parent="ColorRect/Confirmation/HBoxContainer" unique_id=493704644]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = " No "
+
+[node name="Options" type="Control" parent="ColorRect" unique_id=267473506]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -502.75
+offset_top = -258.5
+offset_right = 502.75
+offset_bottom = 258.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="OptionsLabel" type="Label" parent="ColorRect/Options" unique_id=213845013]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -69.0
+offset_top = 50.5
+offset_right = 70.0
+offset_bottom = 85.5
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = " - Options - "
+
+[node name="OptionMenuButtons" type="VBoxContainer" parent="ColorRect/Options" unique_id=1475362540]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.75
+offset_top = -20.0
+offset_right = 49.75
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="GeneralButton" type="Button" parent="ColorRect/Options/OptionMenuButtons" unique_id=1381794136]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_0867v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_07gj0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0867v")
+text = " - General - "
+
+[node name="VideoButton" type="Button" parent="ColorRect/Options/OptionMenuButtons" unique_id=6335576]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_0867v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_07gj0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0867v")
+text = " - Video - "
+
+[node name="AudioButton" type="Button" parent="ColorRect/Options/OptionMenuButtons" unique_id=656849117]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_0867v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_07gj0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0867v")
+text = " - Audio - "
+
+[node name="BackButton" type="Button" parent="ColorRect/Options/OptionMenuButtons" unique_id=1614378357]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_0867v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_07gj0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_frlag")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0867v")
+text = " - Back - "
+
+[node name="GeneralOptions" type="Control" parent="ColorRect/Options" unique_id=127373535]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -170.0
+offset_right = 494.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Options/GeneralOptions" unique_id=361192725]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 37.0
+offset_right = 393.0
+offset_bottom = 113.0
+
+[node name="CameraY" type="CheckButton" parent="ColorRect/Options/GeneralOptions/VBoxContainer" unique_id=954391355]
+layout_mode = 2
+theme = SubResource("Theme_g3seq")
+theme_override_constants/h_separation = 63
+theme_override_font_sizes/font_size = 20
+text = "Invert Camera Y"
+alignment = 1
+
+[node name="CameraX" type="CheckButton" parent="ColorRect/Options/GeneralOptions/VBoxContainer" unique_id=1302738185]
+layout_mode = 2
+theme = SubResource("Theme_g3seq")
+theme_override_constants/h_separation = 63
+theme_override_font_sizes/font_size = 20
+text = "Invert Camera X"
+alignment = 1
+
+[node name="VideoOptions" type="Control" parent="ColorRect/Options" unique_id=1161612192]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.0
+offset_top = -171.0
+offset_right = 493.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Options/VideoOptions" unique_id=252923772]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 44.0
+offset_right = 449.0
+offset_bottom = 112.0
+
+[node name="Resolution" type="HBoxContainer" parent="ColorRect/Options/VideoOptions/VBoxContainer" unique_id=578553466]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="ResolutionLabel" type="Label" parent="ColorRect/Options/VideoOptions/VBoxContainer/Resolution" unique_id=505125743]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Resolution out of Full Screen"
+
+[node name="ResolutionSelect" type="OptionButton" parent="ColorRect/Options/VideoOptions/VBoxContainer/Resolution" unique_id=992352373]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+selected = 0
+item_count = 4
+popup/item_0/text = "1280 x 720"
+popup/item_0/id = 0
+popup/item_1/text = "1920 x 1080"
+popup/item_1/id = 1
+popup/item_2/text = "2560 x 1440"
+popup/item_2/id = 2
+popup/item_3/text = "3840 x 2160"
+popup/item_3/id = 3
+
+[node name="FullScreenButton" type="CheckButton" parent="ColorRect/Options/VideoOptions/VBoxContainer" unique_id=1495194849]
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_font_sizes/font_size = 20
+text = "Full Screen (f11)"
+
+[node name="AudioOptions" type="Control" parent="ColorRect/Options" unique_id=169749174]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = -169.0
+offset_right = 492.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Options/AudioOptions" unique_id=1808561745]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 736.0
+offset_bottom = 271.0
+theme_override_constants/separation = 18
+
+[node name="MVLabel" type="Label" parent="ColorRect/Options/AudioOptions/VBoxContainer" unique_id=509099713]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MVSlider" type="HSlider" parent="ColorRect/Options/AudioOptions/VBoxContainer" unique_id=975646843]
+layout_mode = 2
+value = 100.0
+
+[node name="MusicLabel" type="Label" parent="ColorRect/Options/AudioOptions/VBoxContainer" unique_id=198350292]
+layout_mode = 2
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="ColorRect/Options/AudioOptions/VBoxContainer" unique_id=1025011901]
+layout_mode = 2
+value = 100.0
+
+[node name="SFXLabel" type="Label" parent="ColorRect/Options/AudioOptions/VBoxContainer" unique_id=1649451673]
+layout_mode = 2
+text = "Sound Effects"
+
+[node name="SFXSlider" type="HSlider" parent="ColorRect/Options/AudioOptions/VBoxContainer" unique_id=512964254]
+layout_mode = 2
+value = 100.0
+
+[connection signal="pressed" from="ColorRect/MainPauseButtons/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ColorRect/MainPauseButtons/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="ColorRect/MainPauseButtons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="ColorRect/MainPauseButtons/MainButton" to="." method="_on_main_button_pressed"]
+[connection signal="pressed" from="ColorRect/MainPauseButtons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="ColorRect/Confirmation/HBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="ColorRect/Confirmation/HBoxContainer/NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="ColorRect/Options/OptionMenuButtons/GeneralButton" to="." method="_on_general_button_pressed"]
+[connection signal="pressed" from="ColorRect/Options/OptionMenuButtons/VideoButton" to="." method="_on_video_button_pressed"]
+[connection signal="pressed" from="ColorRect/Options/OptionMenuButtons/AudioButton" to="." method="_on_audio_button_pressed"]
+[connection signal="pressed" from="ColorRect/Options/OptionMenuButtons/BackButton" to="." method="_on_back_button_pressed"]

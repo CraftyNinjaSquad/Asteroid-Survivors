@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://fwsgw3emye5l" path="res://Asteroid-Survivors/Scripts/upgrade_UI.gd" id="1_wd3va"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wd3va"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wll6p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o580d"]
+
 [node name="upgrade" type="Button" unique_id=495363896]
 process_mode = 3
 z_index = 1
@@ -33,7 +39,7 @@ offset_right = 87.5
 offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.3372549, 1, 0.8352941)
+color = Color(0.00013216704, 0.2482692, 0.7603922, 0.8352941)
 
 [node name="Button" type="Button" parent="ColorRect" unique_id=110561586]
 layout_mode = 1
@@ -48,6 +54,9 @@ offset_right = 87.25
 offset_bottom = 120.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wd3va")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wll6p")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_o580d")
 
 [node name="Name" type="Label" parent="ColorRect" unique_id=1833864783]
 layout_mode = 1
